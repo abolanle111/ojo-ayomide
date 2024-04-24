@@ -851,17 +851,30 @@ nav a:hover::before {
     text-align: left;
   }
 
+  
+
+
+  .fourth-content .item .hover-effect{
+    width: 100%;
+  }
+
+  
+
   .fourth-content .item .hover-effect h2 {
-    font-size: 15px;
+    font-size: 12px;
   }
 
-  .fifth-content #map {
-    padding: 15px 15px 15px 15px;
+  .fourth-content .item .hover-effect p {
+    /* display: none; */
+    line-height: normal;
+    font-size: 5px;
   }
 
+  
+/* 
   .fifth-content #contact {
     padding: 15px 15px 15px 15px;
-  }
+  } */
 }
 
 @media (max-width: 450px) {
