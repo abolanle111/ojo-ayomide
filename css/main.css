@@ -50,7 +50,7 @@ http://www.templatemo.com/tm-512-moonlight
   width: 12px;
   fill: #7a7a7a;
   opacity: 0;
-  animation: seq-preloader 1.25s infinite;
+  animation: seq-preloader 0.5s infinite;
 }
 
 .seq-preload-circle-2 {
@@ -180,7 +180,7 @@ nav em {
 }
 
 nav ul li i {
-  width: 25px;
+  /* width: 25px; */
 }
 
 nav ul li a {
@@ -217,6 +217,8 @@ nav ul {
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
+
+
 nav ul li {
   margin: 25px 0px;
 }
@@ -271,7 +273,7 @@ nav a:hover::before {
 .slides .slide {
   height: 100vh;
   width: 100vw;
-  float: left;
+  /* float: left; */
   text-align: center;
   background-size: cover;
 }
@@ -351,7 +353,7 @@ nav a:hover::before {
 }
 
 .first-content h2 {
-  font-size: 36px;
+  font-size: 26px;
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
@@ -365,11 +367,11 @@ nav a:hover::before {
 
 .first-content p {
   color: #fff;
-  font-size: 13px;
+  font-size: 20px;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 200;
   letter-spacing: 2px;
-  line-height: 26px;
+  line-height: 40px;
   margin-bottom: 20px;
 }
 
@@ -470,7 +472,8 @@ nav a:hover::before {
 }
 
 .second-content .main-btn a {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(2, fr);
   border: 2px solid #fff;
   padding: 8px 15px;
   font-size: 13px;
@@ -479,6 +482,7 @@ nav a:hover::before {
   color: #fff;
   text-decoration: none;
   transition: all 0.5s;
+  width: 100px;
 }
 
 /* .skills-btn{
@@ -495,11 +499,22 @@ nav a:hover::before {
   color: black !important;
 } */
 
-.skills-btn{
+.skills-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  padding: 8px 15px;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+
+  
+}
+
+.skills-btn{
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 30px 30px;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -583,6 +598,19 @@ nav a:hover::before {
 
 .fourth-content {
   padding: 5px;
+  /* overflow: hidden; */
+}
+.third-content h3,
+.fourth-content h3{
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  /* border-bottom: 2px solid #fff; */
 }
 
 .fourth-content .container-fluid {
@@ -761,17 +789,26 @@ nav a:hover::before {
     margin-left: 25px;
   }
 
+  nav .logo {
+    display: none;
+  }
+
+  nav .mini-logo {
+    margin-top: 60px;
+    display: block;
+  }
+
   .first-content {
     text-align: center;
     padding: 50px;
   }
 
-  .first-content .author-image img {
+  /* .first-content .author-image img {
     max-width: 195px;
     float: none;
     margin-right: 0px;
     margin-bottom: 30px;
-  }
+  } */
 
   .third-content .first-section {
     border-bottom: 1px solid rgba(250, 250, 250, 0.3);
@@ -797,8 +834,15 @@ nav a:hover::before {
     margin-right: 0px;
   }
 
-  .fifth-content #map {
-    padding: 30px 30px 30px 30px;
+  
+  .fourth-content .item .hover-effect h2 {
+    font-size: 16px;
+  }
+
+  .fourth-content .item .hover-effect p {
+    
+    line-height: normal;
+    font-size: 12px;
   }
 
   .fifth-content #contact {
@@ -807,8 +851,33 @@ nav a:hover::before {
 }
 
 @media (max-width: 749px) {
-  nav {
+  /* nav {
     width: 15vh;
+  } */
+  
+  .slides .slide {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background-size: cover;
+  }
+
+  .slides .slide .content {
+    overflow-y: scroll;
+    position: relative;
+    width: 100%;
+    height: 80%;
+    left: 3%;
+    top: 5%;
+    bottom: 10%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  nav {
+    top: unset; /* Remove top positioning */
+    bottom: 0%; /* Move navbar to the bottom */
+    height: 20vh; /* Reduce height */
+    width: 100%; /* Full width */
   }
 
   nav .logo {
@@ -817,13 +886,30 @@ nav a:hover::before {
 
   nav .mini-logo {
     margin-top: 60px;
-    display: block;
+    display: none;
   }
 
   nav ul {
+    /* margin-top: 60px; */
+    text-align: left;
+    /* margin-left: 40px; */
+    list-style-type: none;
+    height: 28vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  /* nav ul {
     text-align: center;
     margin-left: 0px;
-  }
+  } */
 
   nav ul li em {
     display: none;
@@ -831,9 +917,12 @@ nav a:hover::before {
 
   nav ul li i {
     width: 20px;
-    height: 20px;
+    height: 30px;
     line-height: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    
   }
 
   .first-content {
@@ -851,7 +940,8 @@ nav a:hover::before {
     text-align: left;
   }
 
-  
+  .third-content{
+  }
 
 
   .fourth-content .item .hover-effect{
@@ -861,13 +951,26 @@ nav a:hover::before {
   
 
   .fourth-content .item .hover-effect h2 {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .fourth-content .item .hover-effect p {
-    /* display: none; */
+    
     line-height: normal;
-    font-size: 5px;
+    font-size: 12px;
+  }
+
+  .third-content h3,
+  .fourth-content h3{
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: 2px solid #fff; */
   }
 
   
@@ -886,5 +989,8 @@ nav a:hover::before {
   }
   nav a {
     padding: 15px 20px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
